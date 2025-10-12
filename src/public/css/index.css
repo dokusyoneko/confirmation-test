@@ -1,29 +1,37 @@
 .header {
-    background: #000;
+    background: white;
+    border-bottom: 1px solid #D3D3D3;
 }
 
 .header__inner {
     margin: 0 auto;
     padding: 20px 15px;
     max-width: 1230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header__logo {
-    color: #fff;
+    color: #8a7064;
     text-decoration: none;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: bold;
-    font-size: 24px;
 }
 
 .contact-form__content {
     margin: 0 auto;
     padding: 30px 15px;
-    max-width: 1230px;
+    max-width: 1280px;
 }
 
 .contact-form__heading {
     margin-bottom: 40px;
     text-align: center;
+    color: #8a7064;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 .form {
@@ -38,12 +46,89 @@
     margin-bottom: 15px;
 }
 
+.form__group-title{
+    margin-top: 10px;
+}
+
+.form__label--item{
+    color: #8a7064;
+
+}
+
 .form__label--required {
-    margin-left: 5px;
-    padding: 4px 6px;
     border-radius: 3px;
-    background: #fafafa;
-    color: #aaa;
+    color: #FF7F50;
+}
+
+.form__input--text--name{
+    width: 600px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.form__input--text--name input{
+    padding: 10px 10px 10px 20px;
+    width: 280px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    appearance: none;
+    background-color: #F5F5F5;
+    color: #c7b9b2;
+}
+
+.form__input--text--gender{
+    width: 600px;
+    justify-content:left;
+    display: flex;
+    padding: 10px;
+}
+
+.form__input--text--gender label {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #8a7064;
+}
+
+.form__input--text--gender input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #8a7064;
+    margin-right: 6px;
+    cursor: pointer;
+}
+
+.form__input--text--gender input[type="radio"]:checked {
+    background-color: #8a7064;
+    border: none;
+}
+
+
+.form__input--text--tel {
+    width: 600px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+.form__input--text--tel input {
+    padding: 10px;
+    width: 170px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    appearance: none;
+    background-color: #F5F5F5;
+    color: #c7b9b2;
+    text-align: center;
+}
+
+.hyphen{
+    color: #8a6464;
 }
 
 .form__error {
@@ -54,16 +139,54 @@
 
 .form__input--text input,
 .form__input--textarea textarea {
-    padding: 10px;
+    padding: 10px 10px 10px 20px;
     width: 600px;
     border: 1px solid #ddd;
     border-radius: 3px;
-
     appearance: none;
+    background-color: #F5F5F5;
+    color: #c7b9b2;
 }
 
 .form__input--text input {
     height: 40px;
+}
+
+.form__input--text--category{
+    width: 600px;
+    justify-content: left;
+    display: flex;
+    position: relative;
+}
+
+.form__item__category__select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 100%;
+    max-width: 300px;
+    padding: 10px 40px 10px 20px;
+    border-radius: 3px;
+    justify-content: left;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    color: #dcd3d0;
+    background-color: #F5F5F5;
+}
+
+
+.form__input--text--category::after {
+    content: '';
+    position: absolute;
+    right: calc(50% + 12px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 14px;
+    background-color: #dcd3d0;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    pointer-events: none;
 }
 
 .form__input--textarea textarea {
@@ -75,12 +198,13 @@
 }
 
 .form__button-submit {
-    padding: 10px;
-    width: 30%;
-    height: 50px;
+    width: 15%;
+    height: 40px;
     border: none;
-    border-radius: 3px;
-    background: #000;
+    border-radius: 1px;
+    background: #8a7064;
     color: #fff;
     cursor: pointer;
+    font-size: 16px;
+    margin: 0 auto;
 }
