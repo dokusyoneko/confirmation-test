@@ -71,5 +71,30 @@ class ContactController extends Controller
     return view('thanks');
   }
 
+  public function admin()
+{
+    $contacts = Contact::with('category')->get()->map(function ($contact) {
+        return [
+            'id' => $contact->id,
+            'name' => "{$contact->last_name} {$contact->first_name}",
+            'gender' => $contact->gender === 1 ? '男性' : ($contact->gender === 2 ? '女性' : 'その他'),
+            'email' => $contact->email,
+            'category' => $contact->category->content ?? '未分類',
+        ];
+    });
+
+    return view('admin', compact('contacts'));
+}
+
+  public function show($id)
+  {
+    $contact = Contact::with('category')->findOrFail($id);
+    return view('admin_show', compact('contact'));
+}
+
+
+
+
+
 }
 
