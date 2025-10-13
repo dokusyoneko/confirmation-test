@@ -98,6 +98,11 @@
     width: 100px;
 }
 
+.form__button-submit:hover {
+    background-color: #8a7e7e;
+    color: #fff;
+}
+
 .modify {
     position: absolute;
     top: 0;
@@ -106,4 +111,14 @@
     padding: 8px 30px;
     font-size: 14px;
     color: #ac968c;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    font-family: inherit;
+}
+
+.modify:hover {
+    color: #8a7e7e;
+    text-decoration: none;
 }

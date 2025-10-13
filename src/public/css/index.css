@@ -76,6 +76,13 @@
     color: #8a7064;
 }
 
+.form__input--first-name,
+.form__input--last-name {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 
 
 .form__input--text--gender{
@@ -192,6 +199,13 @@
     pointer-events: none;
 }
 
+.form__item__category__select:invalid {
+    color: #baada7;
+}
+.form__item__category__select:valid {
+    color: #816f67;
+}
+
 .form__input--textarea textarea {
     height: 180px;
 }
@@ -210,4 +224,9 @@
     cursor: pointer;
     font-size: 16px;
     margin: 0 auto;
+}
+
+.form__button-submit:hover {
+    background-color: #8a7e7e;
+    color: #fff;
 }
