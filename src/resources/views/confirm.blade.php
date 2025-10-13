@@ -40,10 +40,8 @@
             <tr class="confirm-table__row">
               <th class="confirm-table__header">性別</th>
               <td class="confirm-table__text">
-                @php
-                $genderLabel = ['1' => '男性', '2' => '女性', '3' => 'その他'];
-                @endphp
-                <input type="text" name="gender" value="{{ $contact['gender'] }}" readonly />
+                <input type="text" name="gender" value="{{ $contact['gender_label'] }}" readonly />
+                 <input type="hidden" name="gender" value="{{ $contact['gender'] }}">
               </td>
             </tr>
             <tr class="confirm-table__row">
@@ -76,14 +74,15 @@
             <tr class="confirm-table__row">
               <th class="confirm-table__header">お問い合わせの種類</th>
               <td class="confirm-table__text">
-                <input type="text" name="category_id" value="{{ $contact['category_id']}}" readonly />
+                <input type="text" name="category_id" value="{{ $contact['category_id_label']}}" readonly />
+                <input type="hidden" name="category_id" value="{{ $contact['category_id'] }}">
               </td>
             </tr>
             <tr class="confirm-table__row">
               <th class="confirm-table__header">お問い合わせ内容</th>
               <td class="confirm-table__text">
               <div class="confirm-table__text__text">
-                 {{ $contact['detail'] ?? '' }}
+                 {{ $contact['detail']}}
               </div>
                 <input type="hidden" name="detail" value="{{ $contact['detail']}}">
               </td>

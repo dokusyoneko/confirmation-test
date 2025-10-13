@@ -127,11 +127,9 @@
             <div class="form__input--text--category">
               <select class="form__item__category__select" name="category_id">
                         <option value="">選択してください</option>
-                        {{--
                         @foreach ($categories as $category)
                         <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
                         @endforeach
-                        --}}
                     </select>
             </div>
             <div class="form__error">

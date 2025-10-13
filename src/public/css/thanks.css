@@ -1,27 +1,62 @@
-.header {
-    background: #000;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Playfair Display', serif;
+  background-color: #fff;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.header__inner {
-    margin: 0 auto;
-    padding: 20px 15px;
-    max-width: 1230px;
+.thanks-wrapper {
+  position: relative;
+  text-align: center;
+  z-index: 1;
 }
 
-.header__logo {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 24px;
+.background-text {
+  font-family: 'Playfair Display', serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12rem;
+  color: #f5f5f5;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
 }
 
-.thanks__content {
-    margin: 0 auto;
-    padding: 30px 15px;
-    max-width: 1230px;
+.thanks-message {
+  position: relative;
+  z-index: 2;
+  font-family: 'Playfair Display', serif;
+  margin-top: 60px;
 }
 
-.thanks__heading {
-    margin-bottom: 40px;
-    text-align: center;
+.thanks-message p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #ac968c;
+  font-weight: bold;
+}
+
+.home-button {
+  display: inline-block;
+  padding: 0.1rem 2rem;
+  background-color: #ac968c;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 2px;
+  font-size: 0.85rem;
+  transition: background-color 0.3s ease;
+  height: 32px;
+  line-height: 28px;
+}
+
+.home-button:hover {
+  background-color: #8a7e7e;
 }

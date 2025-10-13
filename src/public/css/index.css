@@ -73,8 +73,10 @@
     border-radius: 3px;
     appearance: none;
     background-color: #F5F5F5;
-    color: #c7b9b2;
+    color: #8a7064;
 }
+
+
 
 .form__input--text--gender{
     width: 600px;
@@ -123,12 +125,13 @@
     border-radius: 3px;
     appearance: none;
     background-color: #F5F5F5;
-    color: #c7b9b2;
+    color: #8a7064;
     text-align: center;
 }
 
+
 .hyphen{
-    color: #8a6464;
+    color: #8a7064;
 }
 
 .form__error {
@@ -145,7 +148,7 @@
     border-radius: 3px;
     appearance: none;
     background-color: #F5F5F5;
-    color: #c7b9b2;
+    color: #8a7064;
 }
 
 .form__input--text input {
@@ -171,7 +174,7 @@
     justify-content: left;
     cursor: pointer;
     border: 1px solid #ddd;
-    color: #dcd3d0;
+    color: #baada7;
     background-color: #F5F5F5;
 }
 
@@ -184,7 +187,7 @@
     transform: translateY(-50%);
     width: 20px;
     height: 14px;
-    background-color: #dcd3d0;
+    background-color: #baada7;
     clip-path: polygon(0 0, 100% 0, 50% 100%);
     pointer-events: none;
 }
