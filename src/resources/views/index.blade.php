@@ -140,14 +140,14 @@
           </div>
           <div class="form__group-content">
             <div class="form__input--text--category">
-              <select class="form__item__category__select" name="category_id" required>
-                        <option value="" disabled selected hidden>選択してください</option>
-                        @foreach ($categories as $category)
-                        <option value="{{ $category['id'] }}" {{ old('category_id') == $category['id'] ? 'selected' : '' }}>
-                        {{ $category['content'] }}
-                        </option>
-                        @endforeach
-                    </select>
+              <select class="form__item__category__select" name="category_id">
+                <option value="" disabled selected hidden>選択してください</option>
+                  @foreach ($categories as $category)
+                  <option value="{{ $category['id'] }}" {{ old('category_id') == $category['id'] ? 'selected' : '' }}>
+                    {{ $category['content'] }}
+                  </option>
+                  @endforeach
+              </select>
             </div>
             <div class="form__error">
               @error('category_id')
