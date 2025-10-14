@@ -72,7 +72,7 @@
 }
 
 .search__date__input{
-    width: 10%;
+    width: 12%;
     height: 35px;
     color: #8a7064;
     background-color: #f8f7f7;
@@ -82,7 +82,7 @@
 }
 
 .search__button__submit {
-    width: 8%;
+    width: 7%;
     color: white;
     background-color: #8a7064;
     height: 35px;
@@ -90,13 +90,17 @@
     font-size: 13px;
 }
 
-.search__reset__button{
-    width: 8%;
+.search__reset__button {
+    display: inline-block;
+    text-align: center;
+    line-height: 35px;
+    width: 7%;
     color: white;
     background-color: #cfbdb5;
     height: 35px;
     border: 1px solid #ddd;
     font-size: 13px;
+    text-decoration: none;
 }
 
 .admin__table__wrapper {
@@ -261,4 +265,55 @@
 
 .confirm-modal__content button:hover {
     background-color: #611d1d;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 0;
+    gap: 0;
+}
+
+.pagination li {
+    margin: 0;
+    list-style: none;
+}
+
+.pagination a,
+.pagination span {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #8a7064;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    margin-left: -1px;
+}
+
+.pagination a:hover {
+    background-color: #f0f0f0;
+}
+
+.pagination .active span {
+    background-color: #8a7064;
+    color: white;
+    border-color: #8a7064;
+}
+
+.pagination .disabled span {
+    color: #ccc;
+    cursor: default;
+}
+
+.pagination li:first-child a,
+.pagination li:first-child span {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.pagination li:last-child a,
+.pagination li:last-child span {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }

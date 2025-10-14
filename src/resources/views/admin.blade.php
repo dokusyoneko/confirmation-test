@@ -31,18 +31,46 @@
         </div>
 
         {{--検索とか色々--}}
-        <div class="search__zone">
-                <input class="search__name__input" type="text" placeholder="名前やメールアドレスを入力してください">
-                <select class="search__gender__select">
-                <option>性別</option>
-                </select>
-                <select class="search__category__select">
-                <option>お問い合わせ種類</option>
-                </select>
-                <input class="search__date__input" type="date" value="年/月/日">
-                <button class="search__button__submit">検索</button>
-                <button class="search__reset__button">リセット</button>
+        <form method="GET" action="{{ route('admin') }}" class="search__zone">
+  {{-- 名前・メールアドレス --}}
+  <input class="search__name__input" type="text" name="keyword" value="{{ request('keyword') }}" placeholder="名前やメールアドレスを入力してください">
+
+  {{-- 性別 --}}
+  <select class="search__gender__select" name="gender">
+    <option value="" disabled {{ request('gender') === null ? 'selected' : '' }}>性別</option>
+  <option value="all" {{ request('gender') === 'all' ? 'selected' : '' }}>全て</option>
+  <option value="1" {{ request('gender') === '1' ? 'selected' : '' }}>男性</option>
+  <option value="2" {{ request('gender') === '2' ? 'selected' : '' }}>女性</option>
+  <option value="3" {{ request('gender') === '3' ? 'selected' : '' }}>その他</option>
+
+  </select>
+
+  {{-- お問い合わせ種類 --}}
+  <select class="search__category__select" name="category_id">
+    <option value="">お問い合わせ種類</option>
+    @foreach ($categories as $category)
+      <option value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : '' }}>
+        {{ $category->content }}
+      </option>
+    @endforeach
+  </select>
+
+  {{-- 日付 --}}
+  <input class="search__date__input" type="date" name="date" value="{{ request('date') }}">
+
+  {{-- 検索ボタン --}}
+  <button class="search__button__submit" type="submit">検索</button>
+
+  {{-- リセットボタン（リンクで条件クリア） --}}
+  <a href="{{ route('admin') }}" class="search__reset__button">リセット</a>
+
+</form>
+
+
+        <div class="pagination">
+        {{ $contacts->links('vendor.pagination.default') }}
         </div>
+
 
 
         <div class="admin__table__wrapper ">
@@ -56,12 +84,12 @@
                 </tr>
                 @foreach ($contacts as $contact)
                 <tr class="admin__data__row">
-                    <td class="name">{{ $contact['name'] }}</td>
-                    <td class="gender">{{ $contact['gender'] }}</td>
-                    <td class="email">{{ $contact['email'] }}</td>
-                    <td class="category_id">{{ $contact['category'] }}</td>
-                    <td class="syousai">
-                        <a href="{{ route('admin.show', ['id' => $contact['id']]) }}" class="admin__detail__link">詳細</a>
+                    <td>{{ $contact->first_name }}　{{ $contact->last_name }}</td>
+                    <td>{{ $contact->gender === 1 ? '男性' : ($contact->gender === 2 ? '女性' : 'その他') }}</td>
+                    <td>{{ $contact->email }}</td>
+                    <td>{{ $contact->category->content ?? '未分類' }}</td>
+                    <td>
+                    <a href="{{ route('admin.show', ['id' => $contact->id]) }}" class="admin__detail__link">詳細</a>
                     </td>
                 </tr>
                 @endforeach
