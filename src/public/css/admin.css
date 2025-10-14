@@ -23,12 +23,12 @@
 
 .contact-form__content {
     margin: 0 auto;
-    padding: 30px 15px;
+    padding: 15px 15px;
     max-width: 1280px;
 }
 
 .contact-form__heading {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     text-align: center;
     color: #8a7064;
     font-family: 'Cormorant Garamond', serif;
@@ -109,7 +109,6 @@
     justify-content: center;
     margin-top: 40px;
     margin: 0 auto;
-    margin-top: 30px;
 }
 
 .admin__table {
@@ -270,7 +269,7 @@
 .pagination {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 15px;
     padding: 0;
     gap: 0;
 }
