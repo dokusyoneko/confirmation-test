@@ -22,6 +22,10 @@
         FashionablyLate
       </a>
     </div>
+    <form class="form" action="/logout" method="post">
+                @csrf
+                <button class="header-nav__button">logout</button>
+              </form>
   </header>
 
   <main>
