@@ -24,11 +24,22 @@ class AdminController extends Controller
     return view('admin', compact('contacts'));
 }
 
-  public function show($id)
-  {
-    $contact = Contact::with('category')->findOrFail($id);
-    $categories = Category::all(); 
-    return view('admin_show', compact('contact'));
+public function show($id)
+{
+    if (request()->ajax()) {
+        $contact = Contact::with('category')->findOrFail($id);
+        return view('admin.modal_detail', compact('contact'));
+    }
+
+    return redirect()->route('admin');
+}
+
+public function destroy($id)
+{
+    $contact = Contact::findOrFail($id);
+    $contact->delete();
+
+    return response()->json(['message' => '削除が完了しました']);
 }
 
 
