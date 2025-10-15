@@ -13,7 +13,6 @@ class AdminController extends Controller
 {
     $query = Contact::query();
 
-    // 名前・メールアドレス（部分一致）
     if ($request->filled('keyword')) {
         $query->where(function ($q) use ($request) {
             $q->where('first_name', 'like', '%' . $request->keyword . '%')
@@ -22,18 +21,15 @@ class AdminController extends Controller
         });
     }
 
-    // 性別
     if ($request->filled('gender') && $request->gender !== 'all') {
     $query->where('gender', $request->gender);
 }
 
 
-    // お問い合わせ種類
     if ($request->filled('category_id')) {
         $query->where('category_id', $request->category_id);
     }
 
-    // 日付
     if ($request->filled('date')) {
         $query->whereDate('created_at', $request->date);
     }

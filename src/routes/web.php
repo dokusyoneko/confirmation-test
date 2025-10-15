@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +31,5 @@ Route::delete('/admin/{id}', [AdminController::class, 'destroy'])->name('admin.d
 Route::delete('/admin/{id}', [AdminController::class, 'destroy'])->name('admin.delete');
 
 
+Route::post('/login', [LoginController::class, 'store'])->name('login');
+Route::post('/register', [RegisterController::class, 'store'])->name('register');

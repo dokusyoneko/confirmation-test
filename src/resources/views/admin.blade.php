@@ -18,14 +18,12 @@
 
   <header class="header">
     <div class="header__inner">
-      <a class="header__logo" href="/">
-        FashionablyLate
-      </a>
+      <a class="header__logo" href="/">FashionablyLate</a>
+      <form class="header__logout-form" action="/logout" method="post">
+        @csrf
+        <button class="header-nav__button">logout</button>
+      </form>
     </div>
-    <form class="form" action="/logout" method="post">
-                @csrf
-                <button class="header-nav__button">logout</button>
-              </form>
   </header>
 
   <main>
@@ -34,12 +32,10 @@
             <h2>Admin</h2>
         </div>
 
-        {{--検索とか色々--}}
         <form method="GET" action="{{ route('admin') }}" class="search__zone">
-  {{-- 名前・メールアドレス --}}
+
   <input class="search__name__input" type="text" name="keyword" value="{{ request('keyword') }}" placeholder="名前やメールアドレスを入力してください">
 
-  {{-- 性別 --}}
   <select class="search__gender__select" name="gender">
     <option value="" disabled {{ request('gender') === null ? 'selected' : '' }}>性別</option>
   <option value="all" {{ request('gender') === 'all' ? 'selected' : '' }}>全て</option>
@@ -59,13 +55,10 @@
     @endforeach
   </select>
 
-  {{-- 日付 --}}
   <input class="search__date__input" type="date" name="date" value="{{ request('date') }}">
 
-  {{-- 検索ボタン --}}
   <button class="search__button__submit" type="submit">検索</button>
 
-  {{-- リセットボタン（リンクで条件クリア） --}}
   <a href="{{ route('admin') }}" class="search__reset__button">リセット</a>
 
 </form>
@@ -101,12 +94,10 @@
         </div>
     </div>
 
-    <!-- モーダルウィンドウ -->
         <div id="modal" class="modal hidden">
   <div class="modal__content">
     <span class="modal__close">&times;</span>
     <div id="modal__body">
-      <!-- 詳細情報がここに読み込まれる -->
     </div>
   </div>
 </div>

@@ -7,18 +7,36 @@
     margin: 0 auto;
     padding: 20px 15px;
     max-width: 1230px;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
 }
 
 .header__logo {
+    font-size: 30px;
+    font-weight: bold;
     color: #8a7064;
     text-decoration: none;
-    font-size: 30px;
-    text-align: center;
     font-family: 'Cormorant Garamond', serif;
-    font-weight: bold;
+    grid-column: 2;
+    justify-self: center;
+}
+
+.header__logout-form {
+    grid-column: 3;
+    justify-self: end;
+    margin: 0;
+}
+
+.header-nav__button{
+    color: #e4c3b3;
+    border: 1px solid #e4c3b3;
+    background-color: #f5f3f3;
+}
+
+.header-nav__button:hover {
+    background-color: #8a7064;
+    color: white;
 }
 
 .contact-form__content {
