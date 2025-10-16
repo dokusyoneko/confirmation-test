@@ -2,7 +2,7 @@
 ## 環境構築
 
 **-Docker ビルド-**<br>
-1.git clone https://github.com/your-username/contact-form.git<br>
+1.git clone https://github.com/dokusyoneko/confirmation-test.git<br>
 2.docker-compose up -d --build<br>
 ※ MySQL が起動しない場合は、各PCの環境に合わせて docker-compose.yml を編集してください。<br>
 
