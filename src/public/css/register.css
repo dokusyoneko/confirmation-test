@@ -31,13 +31,16 @@ main{
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 14px;
     color: #e4c3b3;
     text-decoration: none;
     border: 1px solid #e4c3b3;
-    padding: 0px 8px;
     transition: background 0.3s ease;
     background-color: #f5f3f3;
+    margin-right: 120px;
+    font-size: 15px;
+    padding: 3px 10px;
+    width: 7%;
+    text-align: center;
 }
 
 .header__register:hover {

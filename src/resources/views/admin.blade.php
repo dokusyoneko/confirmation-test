@@ -42,10 +42,8 @@
   <option value="1" {{ request('gender') === '1' ? 'selected' : '' }}>男性</option>
   <option value="2" {{ request('gender') === '2' ? 'selected' : '' }}>女性</option>
   <option value="3" {{ request('gender') === '3' ? 'selected' : '' }}>その他</option>
-
   </select>
 
-  {{-- お問い合わせ種類 --}}
   <select class="search__category__select" name="category_id">
     <option value="">お問い合わせ種類</option>
     @foreach ($categories as $category)
@@ -63,10 +61,18 @@
 
 </form>
 
-
+    <div class="export__pagination">
+      <div class="export__left">
+        <a href="{{ route('admin.export', request()->query()) }}" class="search__export__button">
+        エクスポート
+        </a>
+      </div>
+      <div class="export__right">
         <div class="pagination">
-        {{ $contacts->links('vendor.pagination.default') }}
+          {{ $contacts->links('vendor.pagination.default') }}
         </div>
+      </div>
+    </div>
 
 
 

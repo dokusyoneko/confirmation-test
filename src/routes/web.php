@@ -25,10 +25,13 @@ Route::post('/thanks', [ContactController::class, 'store']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
+    Route::get('/admin/export', [AdminController::class, 'export'])->name('admin.export');
 });
 Route::get('/admin/{id}', [AdminController::class, 'show'])->name('admin.show');
 Route::delete('/admin/{id}', [AdminController::class, 'destroy'])->name('admin.delete');
 Route::delete('/admin/{id}', [AdminController::class, 'destroy'])->name('admin.delete');
+
+
 
 
 Route::post('/login', [LoginController::class, 'store'])->name('login');

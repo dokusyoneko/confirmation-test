@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\Category;
 use App\Http\Requests\ContactRequest;
+use Symfony\Component\HttpFoundation\StreamedResponse;
+
 
 class AdminController extends Controller
 {
@@ -57,6 +59,61 @@ class AdminController extends Controller
     return response()->json(['message' => '']);
 }
 
+    public function export(Request $request): StreamedResponse
+    {
+    $query = Contact::query();
+
+    // 検索条件を再利用
+    if ($request->filled('keyword')) {
+        $query->where(function ($q) use ($request) {
+            $q->where('first_name', 'like', '%' . $request->keyword . '%')
+              ->orWhere('last_name', 'like', '%' . $request->keyword . '%')
+              ->orWhere('email', 'like', '%' . $request->keyword . '%');
+        });
+    }
+
+    if ($request->filled('gender') && $request->gender !== 'all') {
+        $query->where('gender', $request->gender);
+    }
+
+    if ($request->filled('category_id')) {
+        $query->where('category_id', $request->category_id);
+    }
+
+    if ($request->filled('date')) {
+        $query->whereDate('created_at', $request->date);
+    }
+
+    $contacts = $query->with('category')->get();
+
+    $fileName = 'contacts_' . now()->format('Ymd_His') . '.csv';
+    $headers = [
+        'Content-Type' => 'text/csv',
+        'Content-Disposition' => "attachment; filename={$fileName}",
+    ];
+
+    return response()->stream(function () use ($contacts) {
+        $handle = fopen('php://output', 'w');
+        $columns = ['ID', '名前', '性別', 'メールアドレス', 'お問い合わせ種類', '送信日時'];
+        mb_convert_variables('SJIS-win', 'UTF-8', $columns);
+        fputcsv($handle, $columns);
+
+        foreach ($contacts as $contact) {
+            $row = [
+                $contact->id,
+                $contact->first_name . ' ' . $contact->last_name,
+                $contact->gender === 1 ? '男性' : ($contact->gender === 2 ? '女性' : 'その他'),
+                $contact->email,
+                $contact->category->content ?? '未分類',
+                $contact->created_at->format('Y-m-d H:i:s'),
+            ];
+            mb_convert_variables('SJIS-win', 'UTF-8', $row);
+            fputcsv($handle, $row);
+        }
+
+        fclose($handle);
+    }, 200, $headers);
+}
 
 
 }
