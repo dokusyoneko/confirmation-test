@@ -20,6 +20,7 @@
 ・ MySQL 8.0<br>
 <br>
 ## ER図
+<img width="751" height="389" alt="index" src="https://github.com/user-attachments/assets/befa60c6-a154-4fdb-b4b9-2a21990ebb45" />
 
 ## アクセスURL
 - アプリケーション: http://localhost:80<br>
