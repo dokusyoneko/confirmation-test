@@ -45,7 +45,7 @@
   </select>
 
   <select class="search__category__select" name="category_id">
-    <option value="">お問い合わせ種類</option>
+    <option value="">お問い合わせの種類</option>
     @foreach ($categories as $category)
       <option value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : '' }}>
         {{ $category->content }}
@@ -87,7 +87,7 @@
                 </tr>
                 @foreach ($contacts as $contact)
                 <tr class="admin__data__row">
-                    <td>{{ $contact->first_name }}　{{ $contact->last_name }}</td>
+                    <td>{{ $contact->last_name }}　{{ $contact->first_name }}</td>
                     <td>{{ $contact->gender === 1 ? '男性' : ($contact->gender === 2 ? '女性' : 'その他') }}</td>
                     <td>{{ $contact->email }}</td>
                     <td>{{ $contact->category->content ?? '未分類' }}</td>

@@ -13,7 +13,7 @@
 }
 
 .header__logo {
-    color: #8a7064;
+    color: #8b7969;
     text-decoration: none;
     font-size: 30px;
     text-align: center;
@@ -70,7 +70,6 @@
     padding: 10px 10px 10px 20px;
     width: 280px;
     border: 1px solid #ddd;
-    border-radius: 3px;
     appearance: none;
     background-color: #F5F5F5;
     color: #8a7064;
@@ -129,7 +128,6 @@
     padding: 10px;
     width: 170px;
     border: 1px solid #ddd;
-    border-radius: 3px;
     appearance: none;
     background-color: #F5F5F5;
     color: #8a7064;
@@ -151,7 +149,6 @@
     padding: 10px 10px 10px 20px;
     width: 600px;
     border: 1px solid #ddd;
-    border-radius: 3px;
     appearance: none;
     background-color: #F5F5F5;
     color: #8a7064;
@@ -172,11 +169,9 @@
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-
     width: 100%;
     max-width: 300px;
     padding: 10px 40px 10px 20px;
-    border-radius: 3px;
     justify-content: left;
     cursor: pointer;
     border: 1px solid #ddd;
@@ -217,8 +212,7 @@
     width: 15%;
     height: 40px;
     border: none;
-    border-radius: 1px;
-    background: #8a7064;
+    background: #82756a;
     color: #fff;
     cursor: pointer;
     font-size: 16px;

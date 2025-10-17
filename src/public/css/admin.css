@@ -29,13 +29,14 @@
 }
 
 .header-nav__button{
-    color: #e4c3b3;
-    border: 1px solid #e4c3b3;
-    background-color: #f5f3f3;
+    color: #dccabb;
+    border: 1px solid #eaded5;
+    background-color: #f6f6f6;
     margin-right: 120px;
     font-size: 15px;
     padding: 3px 10px;
     text-align: center;
+    cursor: pointer;
 }
 
 .header-nav__button:hover {
@@ -81,16 +82,18 @@
     border: 1px solid #ddd;
     padding: 0px 7px;
     font-size: 13px;
+    cursor: pointer;
 }
 
 .search__category__select{
-    width: 16%;
+    width: 18%;
     height: 35px;
     color: #8a7064;
     background-color: #f8f7f7;
     border: 1px solid #ddd;
     padding: 0px 7px;
     font-size: 13px;
+    cursor: pointer;
 }
 
 .search__date__input{
@@ -101,6 +104,7 @@
     border: 1px solid #ddd;
     padding: 0px 7px;
     font-size: 13px;
+    cursor: pointer;
 }
 
 .search__button__submit {
@@ -110,6 +114,7 @@
     height: 35px;
     border: 1px solid #ddd;
     font-size: 13px;
+    cursor: pointer;
 }
 
 .search__reset__button {

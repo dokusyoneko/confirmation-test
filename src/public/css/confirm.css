@@ -43,13 +43,14 @@
 }
 
 .confirm-table__header {
-    padding: 15px;
+    padding: 15px 35px;
     width: 30%;
     border-bottom: 1px solid #ddd;
     background-color: #ac968c;
     color: white;
     font-size: 14px;
     font-weight: normal;
+    text-align: left;
 }
 
 .confirm-table__text {
@@ -90,10 +91,9 @@
 .form__button-submit {
     padding: 8px 20px;
     font-size: 14px;
-    background: #8a7064;
+    background: #82756a;
     color: #fff;
     border: none;
-    border-radius: 1px;
     cursor: pointer;
     width: 100px;
 }
