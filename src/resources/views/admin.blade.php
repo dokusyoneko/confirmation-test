@@ -26,7 +26,7 @@
   </header>
 
   <main>
-    < class="contact-form__content">
+    <div class="contact-form__content">
       <div class="contact-form__heading">
         <h2>Admin</h2>
       </div>
@@ -66,34 +66,35 @@
         </div>
       </div>
 
-    <div class="admin__table__wrapper ">
-      <table class="admin__table">
-        <tr class="admin__header__row">
-          <th class="name">お名前</th>
-          <th class="gender">性別</th>
-          <th class="mail">メールアドレス</th>
-          <th class="category_id">お問い合わせの種類</th>
-          <th class="syousai"></th>
-        </tr>
-        @foreach ($contacts as $contact)
-        <tr class="admin__data__row">
-          <td>{{ $contact->last_name }}　{{ $contact->first_name }}</td>
-          <td>{{ $contact->gender === 1 ? '男性' : ($contact->gender === 2 ? '女性' : 'その他') }}</td>
-          <td>{{ $contact->email }}</td>
-          <td>{{ $contact->category->content ?? '未分類' }}</td>
-          <td>
-            <a href="{{ route('admin.show', ['id' => $contact->id]) }}" class="admin__detail__link">詳細</a>
-          </td>
-        </tr>
-        @endforeach
-      </table>
-    </div>
-
-    <div id="modal" class="modal hidden">
-      <div class="modal__content">
-        <span class="modal__close">&times;</span>
-      <div id="modal__body">
+      <div class="admin__table__wrapper ">
+        <table class="admin__table">
+          <tr class="admin__header__row">
+            <th class="name">お名前</th>
+            <th class="gender">性別</th>
+            <th class="mail">メールアドレス</th>
+            <th class="category_id">お問い合わせの種類</th>
+            <th class="syousai"></th>
+          </tr>
+          @foreach ($contacts as $contact)
+          <tr class="admin__data__row">
+            <td>{{ $contact->last_name }}　{{ $contact->first_name }}</td>
+            <td>{{ $contact->gender === 1 ? '男性' : ($contact->gender === 2 ? '女性' : 'その他') }}</td>
+            <td>{{ $contact->email }}</td>
+            <td>{{ $contact->category->content ?? '未分類' }}</td>
+            <td>
+              <a href="{{ route('admin.show', ['id' => $contact->id]) }}" class="admin__detail__link">詳細</a>
+            </td>
+          </tr>
+          @endforeach
+        </table>
       </div>
+
+      <div id="modal" class="modal hidden">
+        <div class="modal__content">
+          <span class="modal__close">&times;</span>
+            <div id="modal__body">
+            </div>
+        </div>
       </div>
     </div>
   </main>
