@@ -15,9 +15,9 @@
 6.php artisan db:seed<br>
 <br>
 ## 使用技術
-・ PHP 8.0<br>
-・ Laravel 10.x<br>
-・ MySQL 8.0<br>
+・ PHP 8.1.33<br>
+・ Laravel 8.83.8<br>
+・ MySQL 8.0.26<br>
 <br>
 ## ER図
 <img width="571" height="841" alt="index" src="https://github.com/user-attachments/assets/8365d43f-95f2-4bae-a086-a0afd0f9b2d9" />
