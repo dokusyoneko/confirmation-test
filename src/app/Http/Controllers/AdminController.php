@@ -19,7 +19,8 @@ class AdminController extends Controller
         $query->where(function ($q) use ($request) {
             $q->where('first_name', 'like', '%' . $request->keyword . '%')
               ->orWhere('last_name', 'like', '%' . $request->keyword . '%')
-              ->orWhere('email', 'like', '%' . $request->keyword . '%');
+              ->orWhere('email', 'like', '%' . $request->keyword . '%')
+              ->orWhereRaw("CONCAT(last_name, first_name) LIKE ?", ["%{$request->keyword}%"]);
         });
     }
 
@@ -56,7 +57,7 @@ class AdminController extends Controller
 {
     $contact = Contact::findOrFail($id);
     $contact->delete();
-    return response()->json(['message' => '']);
+    return redirect()->route('admin');
 }
 
     public function export(Request $request): StreamedResponse

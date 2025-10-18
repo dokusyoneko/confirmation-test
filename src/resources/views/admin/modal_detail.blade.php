@@ -8,11 +8,12 @@
   <p><strong>お問い合わせの種類</strong>{{ $contact->category->content ?? '未分類' }}</p>
   <p><strong>お問い合わせ内容</strong>{{ $contact->detail ?? '' }}</p>
 
-  <form method="POST" action="{{ route('admin.delete', ['id' => $contact->id]) }}">
+  <form action="{{ route('admin.delete', $contact->id) }}" method="POST">
     @csrf
     @method('DELETE')
-    <button class="delete__button" data-id="{{ $contact->id }}">削除</button>
-
+    <button type="submit" class="delete__button">削除</button>
   </form>
+
+  
 </div>
 

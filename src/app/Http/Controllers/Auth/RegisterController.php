@@ -20,6 +20,6 @@ class RegisterController extends Controller
 
         Auth::login($user);
 
-        return redirect('/admin'); // 登録後の遷移先
+        return redirect('/admin'); 
     }
 }
